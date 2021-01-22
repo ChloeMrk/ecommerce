@@ -13,7 +13,7 @@ class ProduitsController extends Controller
 
     public function produit(){
         
-       $produit = Produit::create([
+       $produits = Produit::create([
 
             'name' => request('name'),
             'prix' => request('prix'),
@@ -24,6 +24,10 @@ class ProduitsController extends Controller
     }
 
     public function shoow(){
-        return view('Produit/produit');
+
+        $produits= Produit::all();
+        return view('Produit/produit',[
+            'produits'=>$produits,
+        ]);
     }
 }
