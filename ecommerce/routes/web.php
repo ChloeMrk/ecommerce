@@ -26,3 +26,16 @@ Route::post('/inscription','App\Http\Controllers\InscriptionsController@inscript
 Route::get('/connexion','App\Http\Controllers\ConnexionController@form');
 
 Route::post('/connexion','App\Http\Controllers\ConnexionController@connexion' );
+
+
+Route::get('/dashboard','App\Http\Controllers\UserAccountController@dashboard');
+
+
+//Produit
+
+Route::get('/produit','App\Http\Controllers\ProduitsController@show');
+
+Route::post('/produit','App\Http\Controllers\ProduitsController@produit');
+
+Route::get('/produits','App\Http\Controllers\ProduitsController@shoow');
+
