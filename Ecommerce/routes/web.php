@@ -16,3 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('homepage');
 });
+
+Route::get('/inscription','App\Http\Controllers\InscriptionsController@inscription');
+
+Route::post('/inscription','App\Http\Controllers\InscriptionsController@inscriptions');
+
+
+//Connexion
+Route::get('/connexion','App\Http\Controllers\ConnexionController@form');
+
+Route::post('/connexion','App\Http\Controllers\ConnexionController@connexion' );

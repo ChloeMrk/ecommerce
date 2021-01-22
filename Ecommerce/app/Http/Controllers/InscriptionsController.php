@@ -1,14 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
 use App\Models\User as User;
+use Illuminate\Http\Request;
 
 class InscriptionsController extends Controller
 {
-    //
-
     public function inscription(){
         return view('inscription');
     }
@@ -22,6 +19,7 @@ class InscriptionsController extends Controller
             'password' => ['required','confirmed'],
             'password' => ['required'],
             'birthday' =>['required'],
+          
 
         ]);
 

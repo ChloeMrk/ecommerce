@@ -1,4 +1,4 @@
-@extend('layout')
+@extends('layout')
 
 @section('contenu')
 
@@ -43,6 +43,9 @@
         @if($errors->has('birthday'))
             <p>Date not correct</p>
         @endif
+
+   
+    
 
     <input type="submit" value="Valider">
 </form>
