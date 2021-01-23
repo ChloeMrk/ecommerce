@@ -39,3 +39,9 @@ Route::post('/produit','App\Http\Controllers\ProduitsController@produit');
 
 Route::get('/produits','App\Http\Controllers\ProduitsController@shoow');
 
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
+
+

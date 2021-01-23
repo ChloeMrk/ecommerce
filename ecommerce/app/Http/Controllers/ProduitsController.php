@@ -12,22 +12,28 @@ class ProduitsController extends Controller
     }
 
     public function produit(){
+
+        
         
        $produits = Produit::create([
 
             'name' => request('name'),
             'prix' => request('prix'),
             'url_image' => cloudinary()->upload(request()->file('file')->getRealPath())->getSecurePath()
-
+ 
 
        ]);
     }
 
     public function shoow(){
 
-        $produits= Produit::all();
+        // $produits= Produit::all();
+        $produits = Produit::simplePaginate(2);
         return view('Produit/produit',[
             'produits'=>$produits,
+            
         ]);
     }
+
+    
 }

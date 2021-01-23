@@ -17,7 +17,9 @@
     
     
     </li>
-
+    <div class="d-flex justify-content-center">
+    {!! $produits->links() !!}
+    </div>
 </ul>
 
 @endsection
