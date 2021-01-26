@@ -2,7 +2,7 @@
 
 @section('contenu')
 
-<form action="/produit"  method="post">
+<form action="/produit"   method="post" enctype="multipart/form-data">
 
     {{csrf_field()}}
 

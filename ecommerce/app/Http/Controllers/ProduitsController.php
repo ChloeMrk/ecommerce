@@ -14,7 +14,8 @@ class ProduitsController extends Controller
     public function produit(){
 
         
-        
+        // Stocke l'image sur Cloudinary et renvoie l'URL sécurisée 
+       
        $produits = Produit::create([
 
             'name' => request('name'),
@@ -35,5 +36,15 @@ class ProduitsController extends Controller
         ]);
     }
 
-    
+    public function recherche()
+    {
+        $search = request()->input('search');
+
+        $produits = Produit::where('name','like',"%$search%")
+            ->orWhere('description','like',"%$search%")
+            ->paginate(2);
+
+        return view('produit.search')->with('produits',$produits);
+
+    }
 }

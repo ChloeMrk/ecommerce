@@ -39,9 +39,13 @@ Route::post('/produit','App\Http\Controllers\ProduitsController@produit');
 
 Route::get('/produits','App\Http\Controllers\ProduitsController@shoow');
 
-
+//Admin
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+
+//Recherche
+Route::get('/search', 'App\Http\Controllers\ProduitsController@recherche')->name('produit.search');
 
 
