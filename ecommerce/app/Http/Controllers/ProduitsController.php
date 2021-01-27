@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class ProduitsController extends Controller
 {
-    public function show(){
+    public function creation(){
         return view('Produit/produits');
     }
 
@@ -20,20 +20,31 @@ class ProduitsController extends Controller
 
             'name' => request('name'),
             'prix' => request('prix'),
-            'url_image' => cloudinary()->upload(request()->file('file')->getRealPath())->getSecurePath()
+            'url_image' => cloudinary()->upload(request()->file('file')->getRealPath())->getSecurePath(),
+            'description'=>request('description')
  
 
        ]);
     }
 
-    public function shoow(){
+    public function catalogue(){
 
         // $produits= Produit::all();
-        $produits = Produit::simplePaginate(2);
+        //$produits = Produit::simplePaginate(2);
+
+        $produits = Produit::orderBy('created_at','desc')
+            ->simplepaginate(2);
+       
         return view('Produit/produit',[
             'produits'=>$produits,
             
         ]);
+    }
+
+    public function show(int $id){
+        $produits = Produit::all()->where('id',$id)->first();
+        return view('Produit/show',['name'=>$produits->name,'description'=>$produits->description,'url_image'=>$produits->url_image]);
+
     }
 
     public function recherche()

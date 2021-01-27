@@ -9,10 +9,11 @@
         @foreach($produits as $produit)
 
             <div>
+            <a href="{{route('showProduit',['id'=>$produit->id])}}">
                 <h4>{{$produit->name}}</h4>
                 <p>{{$produit->prix}} €</p>
-                <div><img src="{{$produit->url_image}}" alt="produitImage"></div>
-                <form action="{{route('basket.add',$produit)}}" method="post">
+                <div><img src="{{$produit->url_image}}" alt="produitImage"></div></a>
+                <form action="" method="post">
                 {{ csrf_field() }}
 
                 <input type="number" name="quantity" placeholder="Quantité" class="form-control mr-2">
@@ -25,7 +26,7 @@
     
     </li>
     <div class="d-flex justify-content-center">
-    {!! $produits->links() !!}
+    {!! $produits->links('') !!}
     </div>
 
    

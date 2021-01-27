@@ -12,10 +12,13 @@
     @include('header')
 
  
+    @include('flash::message')
 
     <div class="container">
     @yield('contenu') <!-- Pour insérer une vue-->
     </div>
+
+    
 
     @include('footer')
 
