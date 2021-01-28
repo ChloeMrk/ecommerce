@@ -4,17 +4,31 @@
 
 <body>
 
-    <h1>World Of Gamecraft</h1>
+    
    
-   <div class="produit">
+    <div class="produit">
+
+    @foreach($produits as $produit)
+
+        <div class="post-container">
+            <a href="{{route('showProduit',['id'=>$produit->id])}}">
+                <h4>{{$produit->name}}</h4>
+                <div class="test"><img src="{{$produit->url_image}}" alt="produitImage"></div></a>
+                <span>{{$produit->prix}} €</span>
+                <p>{{$produit->description}}</p>
+        </div>  
+
+        @endforeach
+    </div>
+    
    
-    <img src="https://i.pinimg.com/originals/4c/c7/9a/4cc79ab60bab7f0b35533851c23c26d0.png" class="rounded-0" alt="Godfall">
-    <img src="https://static.fnac-static.com/multimedia/Images/FR/NR/b0/88/c0/12617904/1505-1/tsp20201015153326/Aain-s-Creed-Valhalla-PS5.jpg" class="rounded-1" alt="Assasin">
+
    
-   </div>
  
 
-    
+   <div class="d-flex justify-content-center">
+    {!! $produits->links('') !!}
+    </div>
 </body>
 
 

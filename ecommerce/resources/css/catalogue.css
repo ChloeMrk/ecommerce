@@ -1,0 +1,18 @@
+.catalogue {
+    background-color: rgba(248, 249, 249, 0.5);
+    border: black 1px;
+    font-weight: bold;
+}
+
+.catalogue h4 {
+    color: #8e44ad;
+    font-weight: bold;
+}
+
+.catalogue p {
+    color: #8e44ad;
+}
+
+.show {
+    background-color: rgba(248, 249, 249, 0.5);
+}

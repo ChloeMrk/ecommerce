@@ -1,14 +1,85 @@
 .produit {
-    display: inline-block;
+    /* background-color: #eafaf1; */
+    background-color: rgba(248, 249, 249, 0.5);
     width: 50%;
     height: 50%;
+    margin: 0% 25%;
+    top: 10%;
+    box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7),
+        -1px 2px 20px rgba(255, 255, 255, 0.6) inset;
+    border: 1px;
+    border-style: double;
+    border-color: black;
+}
+
+span {
+    font-weight: bold;
+    font-size: 20px;
+}
+.test {
+    width: 75%;
+    height: 75%;
+    margin: 0% 35%;
 }
 
 img {
-    width: 25%;
-    height: 25%;
-    margin-right: 10%;
-    top: 30%;
+    width: 30%;
+    height: 30%;
+}
+
+h1 {
+    color: #8e44ad;
+}
+
+nav {
+    display: flex;
+}
+
+.navbar {
+    background-color: #ebdef0;
+}
+
+a {
+    font-family: Times;
+    font-size: 20px;
+    margin: 10px;
+    text-decoration: none;
+}
+
+body {
+    background-image: url("https://a-static.besthdwallpaper.com/pourpre-et-bleu-fantasy-world-fond-d-ecran-1024x768-26752_18.jpg");
+    background-size: cover;
+}
+
+.post-container {
+    background-color: rgba(248, 249, 249, 0.5);
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+    display: block;
+    box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7),
+        -1px 2px 20px rgba(255, 255, 255, 0.6) inset;
+    margin: 20px 40px 10px 40px;
+    display: inline-block;
+}
+
+.catalogue {
+    background-color: rgba(248, 249, 249, 0.5);
+    border: black 1px;
+    font-weight: bold;
+}
+
+.catalogue h4 {
+    color: #8e44ad;
+    font-weight: bold;
+}
+
+.catalogue p {
+    color: #8e44ad;
+}
+
+.show {
+    background-color: rgba(248, 249, 249, 0.5);
 }
 
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Produit as Produit;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 
 class ProduitsController extends Controller
@@ -32,10 +33,28 @@ class ProduitsController extends Controller
         // $produits= Produit::all();
         //$produits = Produit::simplePaginate(2);
 
+        
+
         $produits = Produit::orderBy('created_at','desc')
             ->simplepaginate(2);
        
         return view('Produit/produit',[
+            'produits'=>$produits,
+            
+        ]);
+    }
+
+    public function homepage(){
+
+         //$produits= Produit::all();
+        //$produits = Produit::simplePaginate(2);
+
+        
+
+        $produits = Produit::orderBy('created_at','desc')
+            ->simplepaginate(2);
+       
+        return view('homepage',[
             'produits'=>$produits,
             
         ]);

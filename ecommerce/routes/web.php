@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('homepage');
-});
+Route::get('/', 'App\Http\Controllers\ProduitsController@homepage');
 
 //Inscription
 
@@ -63,3 +61,12 @@ Route::group(['prefix' => 'admin'], function () {
 Route::get('/search', 'App\Http\Controllers\ProduitsController@recherche')->name('produit.search');
 
 
+//Ajout un produit en panier
+
+Route::get('panier','App\Http\Controllers\CartController@index')->name('cart.index');
+
+Route::post('/panier/ajouter','App\Http\Controllers\CartController@store')->name('cart.store');
+Route::delete('/panier/{id}', 'App\Http\Controllers\CartController@destroy')->name('cart.destroy');
+Route::get('/videpanier',function(){
+    Cart::destroy();
+});
