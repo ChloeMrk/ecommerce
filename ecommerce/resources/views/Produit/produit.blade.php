@@ -5,8 +5,9 @@
 <ul>
 
     <li>
-    
-        @foreach($produits as $produit)
+
+    <!-- Récupérer et afficher les données de la table produit -->
+       @foreach($produits as $produit)  
 
             <div class="catalogue">
                 <a href="{{route('showProduit',['id'=>$produit->id])}}" style="text-decoration:none">
@@ -24,7 +25,7 @@
 
         @endforeach
     
-    
+    <!-- Afficher la pagination -->
     </li>
     <div class="d-flex justify-content-center">
     {!! $produits->links('') !!}

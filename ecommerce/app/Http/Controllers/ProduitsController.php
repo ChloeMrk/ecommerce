@@ -15,12 +15,13 @@ class ProduitsController extends Controller
     public function produit(){
 
         
-        // Stocke l'image sur Cloudinary et renvoie l'URL sécurisée 
        
+       //Créer un produit pour l'ajouter à la table produit
        $produits = Produit::create([
 
             'name' => request('name'),
             'prix' => request('prix'),
+             // Stocke l'image sur Cloudinary et renvoie l'URL sécurisée
             'url_image' => cloudinary()->upload(request()->file('file')->getRealPath())->getSecurePath(),
             'description'=>request('description')
  

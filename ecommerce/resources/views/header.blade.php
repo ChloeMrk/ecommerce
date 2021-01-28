@@ -19,6 +19,9 @@
             <li class="nav-item">
                 <a href="{{url('/password_modification')}}" style="text-decoration:none">Change Password</a>
             </li>
+            <li class="nav-item">
+                <a href="{{url('/produits')}}" style="text-decoration:none">Catalogue</a>
+            </li>
             </li>
                 <li class="nav-item">
                 <a class="text-muted" href="{{route('cart.index')}}" style="text-decoration:none">Panier </a>
@@ -56,6 +59,9 @@
         </li>
         <li class="nav-item">
             <a href="{{url('/inscription')}}" style="text-decoration:none">Sign in</a>
+        </li>
+        <li class="nav-item">
+                <a href="{{url('/produits')}}" style="text-decoration:none">Catalogue</a>
         </li>
             <li class="nav-item">
             <a class="text-muted" href="{{route('cart.index')}}">Panier </a>

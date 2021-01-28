@@ -43,13 +43,13 @@ Route::post('/connexion','App\Http\Controllers\ConnexionController@connexion' );
 
 //Produit
 
-Route::get('/produit','App\Http\Controllers\ProduitsController@creation');
+Route::get('/produit','App\Http\Controllers\ProduitsController@creation'); //Afficher le formulaire pour créer un produit
 
-Route::post('/produit','App\Http\Controllers\ProduitsController@produit');
+Route::post('/produit','App\Http\Controllers\ProduitsController@produit'); //Envoyer les donnée à la base de donnée
 
-Route::get('/produits','App\Http\Controllers\ProduitsController@catalogue');
+Route::get('/produits','App\Http\Controllers\ProduitsController@catalogue'); //Afficher tout les produits de la table produits
 
-Route::get('show/{id}','App\Http\Controllers\ProduitsController@show')->name('showProduit');
+Route::get('show/{id}','App\Http\Controllers\ProduitsController@show')->name('showProduit');//Afficher le produit qui correspond à l'id
 
 //Admin
 Route::group(['prefix' => 'admin'], function () {

@@ -2,6 +2,7 @@
 
 @section('contenu')
 
+<!-- Récupérer les données pour les envoyer dans la table produit -->
 <form action="/produit"   method="post" enctype="multipart/form-data">
 
     {{csrf_field()}}
